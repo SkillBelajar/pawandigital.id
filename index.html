@@ -660,6 +660,61 @@
             font-weight: 700;
             text-decoration: none;
         }
+
+        /* PACKAGE SECTION */
+        #paket {
+            background: #fff;
+            padding: 40px 0;
+        }
+
+        .package-grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            margin-top: 18px;
+        }
+
+        .package-card {
+            background: linear-gradient(180deg, #ffffff, #fbfbfd);
+            border: 1px solid #eef2f6;
+            border-radius: 12px;
+            padding: 20px;
+            width: 320px;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .package-price {
+            font-size: 1.6rem;
+            color: var(--accent-color);
+            font-weight: 800;
+        }
+
+        .package-features {
+            color: #334155;
+            font-size: 0.95rem;
+        }
+
+        .package-cta {
+            margin-top: 8px;
+            display: flex;
+            gap: 8px;
+            align-items: center
+        }
+
+        .package-cta a {
+            text-decoration: none
+        }
+
+        @media (max-width:767px) {
+            .package-card {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 
@@ -838,6 +893,45 @@
         </div>
     </section>
 
+    <!-- Paket, CTA, Contoh -->
+    <section id="paket">
+        <div class="container">
+            <h2>Paket Pembuatan Landing Page</h2>
+            <p class="section-description">Paket pembuatan landing page lengkap untuk usaha Anda — desain, copy, dan
+                setup dasar agar bisnis Anda siap menerima pelanggan.</p>
+
+            <div class="package-grid">
+                <div class="package-card">
+                    <div style="display:flex;justify-content:space-between;align-items:center">
+                        <div>
+                            <div style="font-weight:700">Landing Page Paket Dasar</div>
+                            <div class="package-price">Rp 600.000</div>
+                        </div>
+                        <div style="font-size:0.85rem;color:#64748b">Durasi: 3-5 hari</div>
+                    </div>
+                    <div class="package-features">
+                        <ul style="margin:8px 0 0 18px;padding:0;color:#334155">
+                            <li>Desain responsif</li>
+                            <li>Copywriting hook & benefit</li>
+                            <li>Form kontak & CTA WhatsApp</li>
+                            <li>1 revisi kecil</li>
+                        </ul>
+                    </div>
+                    <div class="package-cta">
+                        <a class="btn-cta" href="https://wa.me/6289696380422" target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i> Pesan Sekarang via WhatsApp
+                        </a>
+                        <a href="/contoh_landing_page/jasa.html" class=""
+                            style="margin-left:auto;color:var(--primary-color);font-weight:700">Lihat Contoh</a>
+                    </div>
+                </div>
+            </div>
+
+            <p style="text-align:center;margin-top:14px;color:#334155">Contoh: Silahkan lihat contoh landing page kami
+                untuk Jasa, Produk Digital, dan Personal Branding di menu "Contoh Landing Page" atau melalui popup.</p>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -882,6 +976,11 @@
             <p><strong>Jangan biarkan landing page yang buruk merusak omzet Anda.</strong> Kami sedang promo pembuatan
                 landing page supaya usaha Anda lancar.</p>
 
+            <p style="font-weight:700;color:var(--accent-color);margin-top:8px">Paket pembuatan landing page hanya Rp
+                600.000 — Promo Terbatas.</p>
+
+            <p style="margin-top:6px;color:#334155">Contoh: Silahkan lihat contoh landing page kami di bawah.</p>
+
             <div class="promo-list">
                 <a class="promo-link" href="/contoh_landing_page/jasa.html">📄 Landing Page Jasa / Service Profesional -
                     Contoh &amp; Template</a>
@@ -891,8 +990,8 @@
                     Portofolio - Contoh &amp; Template</a>
             </div>
 
-            <a class="promo-cta" href="https://wa.me/6289696380422" target="_blank" rel="noopener">Ambil Promo Sekarang
-                via WhatsApp</a>
+            <a class="promo-cta" href="https://wa.me/6289696380422" target="_blank" rel="noopener">Whatsapp ke Nomor
+                Kami — Ambil Promo Rp 600.000</a>
 
             <div style="margin-top:10px;font-size:0.9rem;color:#666;">
                 <label><input type="checkbox" id="promoNoShow"> Jangan tampilkan lagi</label>
