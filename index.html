@@ -149,9 +149,62 @@
             align-items: center;
         }
 
-        .nav-links a {
+        /* Dropdown for contoh landing page */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             padding: 8px 12px;
             border-radius: 8px;
+            background: transparent;
+            border: 0;
+            cursor: pointer;
+            font-weight: 600;
+            color: inherit;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            min-width: 220px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(15, 23, 42, 0.12);
+            padding: 8px;
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            z-index: 1500;
+        }
+
+        .dropdown-menu a {
+            padding: 8px 10px;
+            border-radius: 6px;
+            color: var(--text-color);
+            display: block;
+        }
+
+        .dropdown-menu a:hover {
+            background: #f7f9fc
+        }
+
+        .dropdown.show .dropdown-menu {
+            display: flex;
+        }
+
+        @media (max-width: 767px) {
+
+            /* Ensure dropdown menu aligns left on small screens */
+            .dropdown-menu {
+                right: auto;
+                left: 0;
+            }
         }
 
         .nav-cta {
@@ -630,9 +683,23 @@
             <nav id="primary-navigation" class="nav-links" aria-label="Navigasi utama">
                 <a href="#interest">Spesialisasi</a>
                 <a href="#desire">Manfaat</a>
+
+                <div class="dropdown" id="examplesDropdown">
+                    <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false"
+                        onclick="toggleDropdown(this)">
+                        Contoh Landing Page <i class="fas fa-chevron-down"
+                            style="font-size:0.85rem;margin-left:4px"></i>
+                    </button>
+                    <div class="dropdown-menu" role="menu" aria-label="Contoh Landing Page">
+                        <a role="menuitem" href="/contoh_landing_page/jasa.html">📄 Jasa / Service Profesional</a>
+                        <a role="menuitem" href="/contoh_landing_page/digital.html">📱 Produk Digital / Aplikasi</a>
+                        <a role="menuitem" href="/contoh_landing_page/personal.html">👤 Personal Branding /
+                            Portofolio</a>
+                    </div>
+                </div>
+
                 <a href="#action" class="nav-cta" aria-label="Konsultasi WhatsApp" rel="noopener"
-                    target="_blank">Hubungi
-                    via WhatsApp</a>
+                    target="_blank">Hubungi via WhatsApp</a>
             </nav>
         </div>
     </header>
@@ -838,6 +905,32 @@
             const expanded = btn.getAttribute('aria-expanded') === 'true';
             btn.setAttribute('aria-expanded', String(!expanded));
         }
+
+        // Toggle dropdown for contoh landing page (mobile-friendly)
+        function toggleDropdown(btn) {
+            const wrapper = btn.closest('.dropdown');
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            if (!wrapper) return;
+            if (expanded) {
+                wrapper.classList.remove('show');
+                btn.setAttribute('aria-expanded', 'false');
+            } else {
+                // close other dropdowns
+                document.querySelectorAll('.dropdown').forEach(d => { if (d !== wrapper) d.classList.remove('show'); });
+                wrapper.classList.add('show');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function (e) {
+            const dropped = document.querySelector('.dropdown.show');
+            if (!dropped) return;
+            if (e.target.closest('.dropdown')) return; // clicked inside
+            dropped.classList.remove('show');
+            const btn = dropped.querySelector('.dropdown-toggle');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+        });
 
         // Improve link clicks on mobile for fast CTA
         document.addEventListener('click', function (e) {
