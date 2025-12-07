@@ -1,11 +1,46 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pawan Digital - Hindari Kegagalan Aplikasi Digital</title>
-    <meta name="description" content="Hentikan kerugian akibat aplikasi yang sering down, tidak aman, dan sulit dikembangkan. Dapatkan solusi Laravel & CouchDB yang terjamin stabilitasnya.">
-    
+    <meta name="description"
+        content="Hentikan kerugian akibat aplikasi yang sering down, tidak aman, dan sulit dikembangkan. Solusi Laravel & CouchDB untuk stabilitas, keamanan, dan uptime tinggi.">
+    <meta name="keywords"
+        content="Laravel, CouchDB, uptime, maintenance aplikasi, stabilitas aplikasi, keamanan aplikasi, konsultasi IT">
+    <link rel="canonical" href="https://pawandigital.id/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pawan Digital - Hindari Kegagalan Aplikasi Digital">
+    <meta property="og:description"
+        content="Solusi Laravel & CouchDB untuk mengurangi downtime, mencegah kebocoran data, dan menstabilkan aplikasi.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pawandigital.id/">
+    <meta property="og:image" content="/gambar/hero-share.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pawan Digital - Stabilitas Aplikasi">
+    <meta name="twitter:description" content="Analisis risiko aplikasi GRATIS — fokus pada uptime dan keamanan.">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Pawan Digital",
+      "url": "https://pawandigital.id/",
+      "sameAs": ["https://www.facebook.com/","https://www.linkedin.com/"],
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "telephone": "+62-89696380422",
+        "contactType": "customer service",
+        "areaServed": "ID"
+      }]
+    }
+    </script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
@@ -13,15 +48,22 @@
         /* 1. VARIABEL & RESET DASAR */
         /* ------------------------------------ */
         :root {
-            --primary-color: #007bff; /* Biru Profesional */
-            --accent-color: #D90429; /* Merah Marun/Bahaya untuk Negative Hook */
-            --dark-bg: #1e293b; /* Latar Belakang Gelap */
-            --dark-bg-secondary: #4b5563; /* Warna gelap untuk Galeri */
-            --light-bg: #f7f9fc; /* Latar Belakang Terang */
-            --text-color: #333;
-            --white-text: #ffffff;
-            --success-color: #38c172; /* Hijau */
-            --yellow-color: #ffeb3b; /* Kuning */
+            --primary-color: #007bff;
+            /* Biru Profesional */
+            --accent-color: #D90429;
+            /* Merah Marun/Bahaya untuk Negative Hook */
+            --dark-bg: #1e293b;
+            /* Latar Belakang Gelap */
+            --dark-bg-secondary: #4b5563;
+            /* Warna gelap untuk Galeri */
+            --light-bg: #f7f9fc;
+            /* Latar Belakang Terang */
+            --text-color: #222;
+            --white-text: #fff;
+            --success-color: #38c172;
+            /* Hijau */
+            --yellow-color: #ffeb3b;
+            /* Kuning */
         }
 
         * {
@@ -30,46 +72,122 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
             color: var(--text-color);
             line-height: 1.6;
+            background: var(--light-bg);
         }
 
         a {
-            text-decoration: none;
             color: var(--primary-color);
+            text-decoration: none;
         }
 
         /* Container utama untuk membatasi lebar konten */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 16px;
         }
 
         /* ------------------------------------ */
         /* 2. HEADER & NAVIGATION */
         /* ------------------------------------ */
         header {
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: #fff;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .06);
         }
 
         header .container {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
+            justify-content: space-between;
+            padding: 12px 16px;
         }
 
         .logo {
-            font-size: 1.5em;
-            font-weight: bold;
+            font-size: 1.25rem;
+            font-weight: 700;
             color: var(--primary-color);
+        }
+
+        /* Logo gambar + teks */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .site-logo {
+            height: 48px;
+            width: auto;
+            display: block
+        }
+
+        .logo-text {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary-color)
+        }
+
+        /* Responsive nav (simple) */
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+
+        .nav-cta {
+            background: var(--accent-color);
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 999px;
+            font-weight: 700;
+        }
+
+        /* Mobile menu */
+        @media (max-width: 767px) {
+            .nav-links {
+                position: absolute;
+                top: 64px;
+                right: 16px;
+                background: #fff;
+                padding: 12px;
+                border-radius: 8px;
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+                flex-direction: column;
+                display: none;
+            }
+
+            .nav-toggle {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border: 0;
+                background: transparent;
+                font-size: 1.25rem;
+            }
+
+            .nav-toggle[aria-expanded="true"]+.nav-links {
+                display: flex;
+            }
         }
 
         /* ------------------------------------ */
@@ -78,29 +196,51 @@
         .btn-cta {
             display: inline-block;
             text-align: center;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 18px 40px;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.2em;
-            transition: background-color 0.3s;
-            box-shadow: 0 4px 10px rgba(217, 4, 41, 0.4);
+            background: var(--accent-color);
+            color: #fff;
+            padding: 14px 22px;
+            border-radius: 40px;
+            font-weight: 700;
+            box-shadow: 0 6px 18px rgba(217, 4, 41, 0.18);
         }
 
         .btn-cta:hover {
-            background-color: #a80320;
+            opacity: .95;
         }
 
         /* Utility Classes */
-        .primary-bg { background-color: var(--primary-color) !important; }
-        .accent-text { color: var(--accent-color) !important; }
-        .primary-text { color: var(--primary-color) !important; }
-        .success-text { color: var(--success-color) !important; }
-        .yellow-text { color: var(--yellow-color) !important; }
-        .dark-text { color: var(--dark-bg) !important; }
-        .white-text { color: var(--white-text) !important; }
-        .dark-bg-secondary { background-color: var(--dark-bg-secondary) !important; }
+        .primary-bg {
+            background-color: var(--primary-color) !important;
+        }
+
+        .accent-text {
+            color: var(--accent-color) !important;
+        }
+
+        .primary-text {
+            color: var(--primary-color) !important;
+        }
+
+        .success-text {
+            color: var(--success-color) !important;
+        }
+
+        .yellow-text {
+            color: var(--yellow-color) !important;
+        }
+
+        .dark-text {
+            color: var(--dark-bg) !important;
+        }
+
+        .white-text {
+            color: var(--white-text) !important;
+        }
+
+        .dark-bg-secondary {
+            background-color: var(--dark-bg-secondary) !important;
+        }
+
         .image-caption {
             display: block;
             background: rgba(0, 0, 0, 0.6);
@@ -118,25 +258,28 @@
         /* 4. TATA LETAK SECTION */
         /* ------------------------------------ */
         section {
-            padding: 60px 0;
+            padding: 48px 0;
         }
 
         h1 {
-            font-size: 2.2em;
-            line-height: 1.2;
+            font-size: 1.6rem;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            color: var(--accent-color);
         }
 
         h2 {
-            font-size: 1.8em; 
+            font-size: 1.25rem;
             color: var(--dark-bg);
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 16px;
         }
 
         .section-description {
+            max-width: 800px;
+            margin: 0 auto 24px;
             text-align: center;
-            font-size: 1em;
-            margin-bottom: 40px;
+            color: #444;
         }
 
         .sub-heading {
@@ -152,64 +295,72 @@
 
         /* 4.1. ATTENTION (HERO SECTION) */
         #attention {
-            background-color: #ffebee; 
-        }
-        #attention .container {
-            display: flex;
-            flex-direction: column; 
-            text-align: center;
-            gap: 30px;
-            padding: 40px 20px;
+            background: linear-gradient(180deg, #fff6f7 0%, #fff 100%);
+            padding: 48px 0;
         }
 
-        #attention .hero-text, #attention .hero-image {
-            width: 100%; 
+        #attention .container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .hero-text {
+            width: 100%;
+            text-align: center;
         }
 
         .subtitle {
-            font-size: 1.1em;
-            font-weight: bold;
-            color: #555;
-            margin-bottom: 30px;
+            font-size: 1rem;
+            color: #444;
+            margin-bottom: 18px;
         }
 
-        .placeholder-visual {
-            background-color: #555;
-            height: 250px; 
+        .hero-image .placeholder-visual {
+            width: 100%;
+            height: 220px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #6b7280, #374151);
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            color: white;
-            font-weight: bold;
-            border-radius: 8px;
+            justify-content: center;
+            color: #fff;
         }
 
+        /* ------------------------------------ */
         /* 4.2. INTEREST SECTION */
         .spesialisasi-grid {
             display: flex;
-            flex-direction: column; 
-            gap: 30px;
+            flex-direction: column;
+            gap: 18px;
             text-align: center;
         }
 
-        .tech-laravel, .tech-couchdb {
-            padding: 15px;
+        .spesialisasi-item {
+            background: #fff;
+            padding: 18px;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+        }
+
+        .spesialisasi-item h3 {
+            margin: 12px 0 8px;
         }
 
         /* 4.3. GALERI BUKTI PELATIHAN */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); 
-            gap: 15px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
         }
 
         .photo-container {
             position: relative;
-            height: 120px; 
             border-radius: 8px;
             overflow: hidden;
-            background-color: var(--dark-bg-secondary);
+            background: var(--dark-bg-secondary);
+            height: 120px;
         }
 
         .photo-container img {
@@ -218,138 +369,125 @@
             object-fit: cover;
             display: block;
         }
-        
+
         /* 4.4. DESIRE SECTION */
         #desire {
-            background-color: var(--dark-bg); 
-            color: white;
-            text-align: center;
-        }
-
-        #desire h2 {
-            color: white;
+            background: var(--dark-bg);
+            color: #fff;
         }
 
         .benefits-grid {
             display: flex;
             flex-direction: column;
-            gap: 30px;
-            margin-bottom: 30px;
+            gap: 18px;
         }
 
-        .benefit-item i {
-            color: var(--accent-color); /* Fallback */
-        }
-
-        .accent-border {
-            border-top: 1px solid #444; 
-            padding-top: 30px;
-            color: var(--accent-color);
+        .benefit-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 16px;
+            border-radius: 8px;
         }
 
         /* 4.5. ACTION SECTION */
         #action {
-            background-color: var(--accent-color); 
+            background: var(--accent-color);
+            color: #fff;
+            text-align: center;
+            padding-top: 40px;
+            padding-bottom: 64px;
         }
 
         #action .btn-cta {
-            min-width: 80%;
-            margin: 0 auto;
-        }
-        .small-text {
-            font-size: 0.9em;
-            margin-top: 20px;
+            width: 100%;
+            max-width: 420px;
+            margin: 12px auto 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
-
-        /* ------------------------------------ */
-        /* 5. FOOTER */
-        /* ------------------------------------ */
         footer {
-            background-color: #1a202c; 
-            color: white;
-            padding: 40px 0;
+            background: #0f1724;
+            color: #fff;
+            padding: 32px 0;
         }
 
         .footer-grid {
-            display: flex;
-            flex-direction: column; 
-            gap: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
             text-align: center;
         }
 
         .footer-heading {
             color: var(--accent-color);
-            margin-bottom: 10px;
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-        .footer-links a {
-            color: white;
-            opacity: 0.8;
+            margin-bottom: 8px;
         }
 
         .copyright {
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 12px;
             text-align: center;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #374151;
         }
 
         /* ------------------------------------ */
         /* 6. MEDIA QUERY (Desktop/Tablet) */
         /* ------------------------------------ */
         @media (min-width: 768px) {
-            
+
             h1 {
-                font-size: 3.5em; 
+                font-size: 3.5em;
             }
-            
+
             h2 {
-                font-size: 2.5em; 
+                font-size: 2.5em;
             }
-            
+
             /* Header/Navigasi di Desktop */
             nav .btn-cta {
                 box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
             }
-            
+
             /* Hero Section di Desktop */
             #attention .container {
-                flex-direction: row; 
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .hero-text {
+                width: 55%;
                 text-align: left;
             }
-            #attention .hero-text {
-                width: 55%; 
-            }
-            #attention .hero-image {
+
+            .hero-image {
                 width: 40%;
             }
-            
+
+            .hero-image .placeholder-visual {
+                height: 320px;
+            }
+
             /* Spesialisasi di Desktop */
             .spesialisasi-grid {
                 flex-direction: row;
-                gap: 50px;
-                text-align: left;
             }
 
             /* Galeri di Desktop */
             .gallery-grid {
-                grid-template-columns: repeat(3, 1fr); 
-                gap: 20px;
+                grid-template-columns: repeat(3, 1fr);
             }
+
             .photo-container {
-                height: 180px; 
+                height: 180px;
             }
 
             /* Desire Section di Desktop */
             .benefits-grid {
                 flex-direction: row;
             }
-            
+
             /* Action Section */
             #action .btn-cta {
                 min-width: 400px;
@@ -357,23 +495,58 @@
 
             /* Footer di Desktop */
             .footer-grid {
-                flex-direction: row;
-                display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 text-align: left;
             }
+
+            .nav-toggle {
+                display: none;
+            }
+        }
+
+        /* Responsive adjustments for logo */
+        @media (max-width:479px) {
+            .site-logo {
+                height: 36px
+            }
+
+            .logo-text {
+                font-size: 0.95rem
+            }
+        }
+
+        /* Accessibility focus */
+        a:focus,
+        button:focus {
+            outline: 3px solid rgba(0, 123, 255, 0.2);
+            outline-offset: 2px;
         }
     </style>
 </head>
+
 <body>
 
     <header>
         <div class="container">
-            <div class="logo">Pawan Digital</div>
-            <nav>
-                <a href="https://wa.me/6289696380422" class="btn-cta primary-bg">
-                    Hentikan Kerugian Sekarang
+            <!-- Tampilkan logo dengan gambar -->
+            <div class="logo">
+                <a href="/" aria-label="Beranda Pawan Digital" style="display:flex;align-items:center;gap:12px">
+                    <img src="gambar/logo.png" alt="Pawan Digital Logo" class="site-logo" loading="eager">
+                    <span class="logo-text">Pawan Digital</span>
                 </a>
+            </div>
+
+            <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Buka menu"
+                onclick="toggleNav(this)">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="primary-navigation" class="nav-links" aria-label="Navigasi utama">
+                <a href="#interest">Spesialisasi</a>
+                <a href="#desire">Manfaat</a>
+                <a href="#action" class="nav-cta" aria-label="Konsultasi WhatsApp" rel="noopener"
+                    target="_blank">Hubungi
+                    via WhatsApp</a>
             </nav>
         </div>
     </header>
@@ -381,21 +554,25 @@
     <section id="attention" class="aida-attention">
         <div class="container">
             <div class="hero-text">
-                <h1 class="accent-text">
-                    APLIKASI xxx ANDA RENTAN GAGAL?
-                </h1>
-                <p class="subtitle">
-                    Jangan biarkan investasi digital Anda menjadi <strong>liabilitas</strong>! Kerugian data, aplikasi <strong>down</strong> saat traffic tinggi, dan biaya <strong>maintenance</strong> tak terduga adalah risiko yang pasti terjadi tanpa fondasi yang tepat.
-                </p>
+                <h1 class="accent-text">APLIKASI ANDA RENTAN GAGAL?</h1>
+                <p class="subtitle">Jangan biarkan investasi digital Anda menjadi <strong>liabilitas</strong>. Kerugian
+                    data,
+                    aplikasi <strong>down</strong> saat traffic tinggi, dan biaya <strong>maintenance</strong> tak
+                    terduga
+                    dapat dicegah dengan fondasi yang tepat.</p>
 
-                <a href="#interest" class="btn-cta">
-                    Lihat Cara Kami Menjamin Stabilitas Anda
-                </a>
+                <a href="#interest" class="btn-cta" aria-label="Lihat cara menjamin stabilitas">Lihat Cara Kami Menjamin
+                    Stabilitas Anda</a>
             </div>
-            
+
             <div class="hero-image">
-                <div class="placeholder-visual">
-                    <i class="fas fa-exclamation-triangle fa-3x"></i><br>[Visual: Grafik Kerugian Bisnis / Ikon "Waspada"]
+                <!-- Ganti ilustrasi dengan header teks yang jelas -->
+                <div class="hero-text-replacement" aria-hidden="false"
+                    style="padding:12px 8px;border-radius:8px;background:transparent;">
+                    <h2 style="font-size:1.25rem;margin:0;color:#1f2937;">Kerugian saat aplikasi down = Kehilangan
+                        Pendapatan</h2>
+                    <p style="margin-top:8px;color:#374151;">Dapatkan analisis risiko cepat & rekomendasi tindakan untuk
+                        menjaga uptime, performa, dan keamanan aplikasi Anda.</p>
                 </div>
             </div>
         </div>
@@ -404,53 +581,61 @@
     <section id="interest" class="aida-interest">
         <div class="container">
             <h2>🚨 Hentikan Risiko dengan Fondasi Laravel & CouchDB</h2>
-            <p class="section-description">
-                Kami menggunakan kombinasi teknologi yang dirancang untuk mencegah kegagalan yang paling umum dalam aplikasi digital.
-            </p>
+            <p class="section-description">Kami menggunakan kombinasi teknologi yang dirancang untuk mencegah kegagalan
+                yang paling umum dalam aplikasi digital.</p>
+
             <div class="spesialisasi-grid">
-                
-                <div class="tech-laravel">
-                    <i class="fas fa-lock fa-4x primary-text"></i>
+
+                <div class="spesialisasi-item tech-laravel">
+                    <i class="fas fa-lock fa-3x primary-text" aria-hidden="true"></i>
                     <h3>Laravel: Solusi Anti-Kebocoran Data</h3>
-                    <p>Laravel adalah perisai Anda. Struktur keamanannya enterprise-grade mencegah serangan umum yang sering merugikan bisnis.</p>
+                    <p>Keamanan berlapis dan praktik terbaik untuk mencegah kebocoran data dan akses tidak sah.</p>
                 </div>
 
-                <div class="tech-couchdb">
-                    <i class="fas fa-bolt fa-4x accent-text"></i>
-                    <h3>CouchDB: Solusi Anti-Crash saat Traffic Tinggi</h3>
-                    <p>CouchDB menjamin kecepatan dan uptime bahkan saat lonjakan traffic mendadak.</p>
+                <div class="spesialisasi-item tech-couchdb">
+                    <i class="fas fa-bolt fa-3x accent-text" aria-hidden="true"></i>
+                    <h3>CouchDB: Tahan Lonjakan Traffic</h3>
+                    <p>Arsitektur yang tahan beban dan replikasi data untuk menjaga performa saat traffic memuncak.</p>
                 </div>
+
             </div>
-            
+
             <div class="section-spacer">
                 <h2 class="sub-heading dark-text">Bukti Keahlian: Galeri Pelatihan Aplikasi</h2>
-                <p class="section-description">Kami tidak hanya membangun, kami juga mengedukasi. Lihat aktivitas pelatihan yang kami lakukan, bukti penguasaan teknologi kami:</p>
+                <p class="section-description">Kami tidak hanya membangun, kami juga mengedukasi. Lihat aktivitas
+                    pelatihan yang kami lakukan sebagai bukti penguasaan teknologi:</p>
             </div>
-            
-            <div class="gallery-grid">
+
+            <div class="gallery-grid" aria-label="Galeri pelatihan">
                 <div class="photo-container">
-                    <img src="https://ullilfahri.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-13-at-09.54.00-3.jpeg" alt="Narasumber Pelatihan Sistem Informasi Perguruan Tinggi">
+                    <img src="gambar/1.jpeg" alt="Narasumber Pelatihan Sistem Informasi Perguruan Tinggi"
+                        loading="lazy">
                     <span class="image-caption">Narasumber Pelatihan Sistem Informasi Perguruan Tinggi</span>
                 </div>
 
                 <div class="photo-container">
-                    <img src="https://ullilfahri.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-13-at-09.54.00.jpeg" alt="Narsumber Open Jurnal Sistem ( OJS )">
-                    <span class="image-caption">Narsumber Open Jurnal Sistem ( OJS )</span>
+                    <img src="gambar/2.jpeg" alt="Narasumber Open Journal System (OJS)" loading="lazy">
+                    <span class="image-caption">Narasumber Open Journal System (OJS)</span>
                 </div>
 
                 <div class="photo-container">
-                    <img src="https://ullilfahri.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-13-at-09.54.00-2-1024x517.jpeg" alt="Narasumber Pelatihan Website Sekolah">
+                    <img src="gambar/3.jpeg" alt="Narasumber Pelatihan Website Sekolah" loading="lazy">
                     <span class="image-caption">Narasumber Pelatihan Website Sekolah</span>
                 </div>
 
                 <div class="photo-container">
-                    <img src="https://ullilfahri.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-13-at-09.54.02-1024x553.jpeg" alt="Narasumber Gerakan Digital Indonesia">
+                    <img src="gambar/4.jpeg" alt="Narasumber Gerakan Digital Indonesia" loading="lazy">
                     <span class="image-caption">Narasumber Gerakan Digital Indonesia</span>
                 </div>
 
                 <div class="photo-container">
-                    <img src="https://ullilfahri.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-13-at-09.54.01-1-1024x996.jpeg" alt="Narasumber Sekolah Digital">
+                    <img src="gambar/5.jpeg" alt="Narasumber Sekolah Digital" loading="lazy">
                     <span class="image-caption">Narasumber Sekolah Digital</span>
+                </div>
+
+                <div class="photo-container">
+                    <img src="gambar/6.jpeg" alt="Narasumber IHT Aplikasi Sekolah" loading="lazy">
+                    <span class="image-caption">Narasumber IHT Aplikasi Sekolah</span>
                 </div>
             </div>
         </div>
@@ -459,28 +644,26 @@
     <section id="desire" class="aida-desire">
         <div class="container">
             <h2 class="white-text">Bayangkan: Bisnis Anda Bebas dari Kekhawatiran Teknis</h2>
-            
+
             <div class="benefits-grid">
                 <div class="benefit-item">
-                    <i class="fas fa-shield-alt fa-3x yellow-text"></i>
+                    <i class="fas fa-shield-alt fa-2x yellow-text" aria-hidden="true"></i>
                     <h4 class="white-text">Jaminan Uptime Minimal 99.9%</h4>
                     <p>Hilangkan ketakutan akan server down. Aplikasi Anda akan selalu tersedia.</p>
                 </div>
                 <div class="benefit-item">
-                    <i class="fas fa-handshake fa-3x success-text"></i>
+                    <i class="fas fa-handshake fa-2x success-text" aria-hidden="true"></i>
                     <h4 class="white-text">Anggaran Maintenance Terprediksi</h4>
                     <p>Tidak ada lagi biaya perbaikan mendadak. Biaya operasional Anda stabil dan terukur.</p>
                 </div>
                 <div class="benefit-item">
-                    <i class="fas fa-business-time fa-3x primary-text"></i>
+                    <i class="fas fa-business-time fa-2x primary-text" aria-hidden="true"></i>
                     <h4 class="white-text">Fokus Penuh pada Pertumbuhan</h4>
-                    <p>Aplikasi yang stabil membebaskan waktu dan energi Anda untuk fokus pada ekspansi bisnis.</p>
+                    <p>Aplikasi yang stabil membebaskan waktu dan energi Anda untuk ekspansi bisnis.</p>
                 </div>
             </div>
 
-            <h3 class="sub-heading accent-border">
-                Visi Kami: Memastikan Pendapatan Tahunan Anda Stabil dari Aplikasi yang Terawat
-            </h3>
+            <h3 class="sub-heading accent-border">Visi Kami: Memastikan Pendapatan Tahunan Anda Stabil</h3>
             <p>Kami menjaga investasi Anda aman melalui layanan maintenance berkelanjutan.</p>
         </div>
     </section>
@@ -488,40 +671,47 @@
     <section id="action" class="aida-action">
         <div class="container">
             <h2 class="white-text">JANGAN TUNDA LAGI! Setiap Jam Down Adalah Kerugian Finansial</h2>
-            <p class="section-description white-text">
-                Dapatkan Analisis Risiko Aplikasi Anda (GRATIS). Kami menargetkan 1 klien baru bulan ini. Ambil slot Anda sekarang!
+            <p class="section-description white-text">Dapatkan Analisis Risiko Aplikasi Anda (GRATIS). Slot terbatas.
             </p>
 
-            <a href="https://wa.me/6289696380422" class="btn-cta primary-bg">
-                <i class="fab fa-whatsapp"></i> Ambil Konsultasi Analisis Risiko GRATIS!
+            <a href="https://wa.me/6289696380422" class="btn-cta primary-bg"
+                aria-label="Ambil konsultasi gratis via WhatsApp" rel="noopener" target="_blank">
+                <i class="fab fa-whatsapp" aria-hidden="true"></i> Ambil Konsultasi Analisis Risiko GRATIS!
             </a>
 
-            <p class="small-text white-text">
-                (Slot konsultasi terbatas. Jangan biarkan risiko terus menghantui bisnis Anda)
-            </p>
+            <p class="small-text white-text" style="margin-top:12px;opacity:.95">(Slot konsultasi terbatas. Jangan
+                biarkan risiko menghantui bisnis
+                Anda)</p>
         </div>
     </section>
 
     <footer>
         <div class="container">
             <div class="footer-grid">
-                
+
                 <div>
                     <h4 class="footer-heading accent-text">Pawan Digital</h4>
                     <p>Spesialis Stabilitas Aplikasi Laravel & CouchDB.</p>
                 </div>
                 <div>
                     <h4 class="footer-heading accent-text">Hubungi Kami</h4>
-                    <p><i class="fab fa-whatsapp"></i> +62-89696380422</p>
+                    <p><i class="fab fa-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/6289696380422"
+                            style="color:inherit;">+62-89696380422</a></p>
                 </div>
                 <div>
                     <h4 class="footer-heading accent-text">Informasi</h4>
-                    <ul class="footer-links">
+                    <ul class="footer-links" style="list-style:none;padding:0;margin:0">
                         <li><a href="#spesialisasi">Spesialisasi</a></li>
                         <li><a href="#desire">Layanan Maintenance</a></li>
                         <li><a href="#">Kebijakan Privasi</a></li>
                     </ul>
                 </div>
+            </div>
+            <!-- Legalitas resmi -->
+            <div class="legal" style="margin-top:14px;color:rgba(255,255,255,0.8);font-size:0.9rem">
+                <p style="margin:0">Legalitas Resmi: <strong>CV. Cipta Swakarya Surya</strong>. Pimpinan:
+                    <strong>Muhammad Ullil Fahri, S.Pd, M.TI</strong>. Website <em>Pawan Digital</em> adalah layanan
+                    resmi dari CV tersebut.</p>
             </div>
             <div class="copyright">
                 <p>&copy; 2025 Pawan Digital. Investasi Digital yang Aman.</p>
@@ -529,5 +719,20 @@
         </div>
     </footer>
 
+    <script>
+        function toggleNav(btn) {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!expanded));
+        }
+
+        // Improve link clicks on mobile for fast CTA
+        document.addEventListener('click', function (e) {
+            const t = e.target.closest('a');
+            if (!t) return;
+            if (t.href && t.target === '_blank') return;
+        });
+    </script>
+
 </body>
+
 </html>
