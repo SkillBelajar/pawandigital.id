@@ -521,6 +521,92 @@
             outline: 3px solid rgba(0, 123, 255, 0.2);
             outline-offset: 2px;
         }
+
+        /* PROMO MODAL */
+        .promo-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .25s ease;
+        }
+
+        .promo-overlay.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .promo-modal {
+            background: #fff;
+            color: #111;
+            max-width: 520px;
+            width: 92%;
+            border-radius: 12px;
+            padding: 20px 18px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+            position: relative;
+        }
+
+        .promo-modal h3 {
+            color: var(--accent-color);
+            margin: 0 0 8px 0;
+            font-size: 1.1rem;
+        }
+
+        .promo-modal p {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+
+        .promo-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .promo-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            background: #f7f9fc;
+            border: 1px solid #eee;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .promo-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .promo-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: transparent;
+            border: 0;
+            font-size: 1.25rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .promo-cta {
+            display: inline-block;
+            margin-top: 12px;
+            background: var(--accent-color);
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+        }
     </style>
 </head>
 
@@ -711,13 +797,41 @@
             <div class="legal" style="margin-top:14px;color:rgba(255,255,255,0.8);font-size:0.9rem">
                 <p style="margin:0">Legalitas Resmi: <strong>CV. Cipta Swakarya Surya</strong>. Pimpinan:
                     <strong>Muhammad Ullil Fahri, S.Pd, M.TI</strong>. Website <em>Pawan Digital</em> adalah layanan
-                    resmi dari CV tersebut.</p>
+                    resmi dari CV tersebut.
+                </p>
             </div>
             <div class="copyright">
                 <p>&copy; 2025 Pawan Digital. Investasi Digital yang Aman.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Promo Modal: Pop-up Promo Pembuatan Landing Page -->
+    <div id="promoOverlay" class="promo-overlay" role="dialog" aria-modal="true" aria-labelledby="promoTitle"
+        aria-hidden="true">
+        <div class="promo-modal">
+            <button class="promo-close" aria-label="Tutup popup" onclick="closePromo()">×</button>
+            <h3 id="promoTitle">Promo Terbatas: Pembuatan Landing Page</h3>
+            <p><strong>Jangan biarkan landing page yang buruk merusak omzet Anda.</strong> Kami sedang promo pembuatan
+                landing page supaya usaha Anda lancar.</p>
+
+            <div class="promo-list">
+                <a class="promo-link" href="/contoh_landing_page/jasa.html">📄 Landing Page Jasa / Service Profesional -
+                    Contoh &amp; Template</a>
+                <a class="promo-link" href="/contoh_landing_page/digital.html">📱 Landing Page Produk Digital / Aplikasi
+                    - Contoh &amp; Template</a>
+                <a class="promo-link" href="/contoh_landing_page/personal.html">👤 Landing Page Personal Branding /
+                    Portofolio - Contoh &amp; Template</a>
+            </div>
+
+            <a class="promo-cta" href="https://wa.me/6289696380422" target="_blank" rel="noopener">Ambil Promo Sekarang
+                via WhatsApp</a>
+
+            <div style="margin-top:10px;font-size:0.9rem;color:#666;">
+                <label><input type="checkbox" id="promoNoShow"> Jangan tampilkan lagi</label>
+            </div>
+        </div>
+    </div>
 
     <script>
         function toggleNav(btn) {
@@ -731,6 +845,39 @@
             if (!t) return;
             if (t.href && t.target === '_blank') return;
         });
+
+        (function () {
+            const overlay = document.getElementById('promoOverlay');
+            function shouldNotShow() {
+                return localStorage.getItem('promo_noshow_v1') === '1';
+            }
+            function openPromo() {
+                if (shouldNotShow()) return;
+                if (!overlay) return;
+                overlay.classList.add('show');
+                overlay.setAttribute('aria-hidden', 'false');
+            }
+            window.closePromo = function () {
+                const checkbox = document.getElementById('promoNoShow');
+                if (checkbox && checkbox.checked) {
+                    localStorage.setItem('promo_noshow_v1', '1');
+                }
+                if (overlay) {
+                    overlay.classList.remove('show');
+                    overlay.setAttribute('aria-hidden', 'true');
+                }
+            }
+            document.addEventListener('DOMContentLoaded', function () {
+                // Tampilkan setelah delay singkat agar tidak langsung mengganggu
+                setTimeout(openPromo, 900);
+                // Tutup bila klik di luar modal
+                if (overlay) {
+                    overlay.addEventListener('click', function (e) {
+                        if (e.target === overlay) closePromo();
+                    });
+                }
+            });
+        })();
     </script>
 
 </body>
