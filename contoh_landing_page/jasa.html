@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Jasa Profesional — Landing Page</title>
+    <meta name="description"
+        content="Landing page jasa untuk UMKM, konsultan, freelancer, bengkel, klinik, designer, developer. Simpel, profesional, dan meyakinkan." />
+    <style>
+        :root {
+            --bg: #f7fafc;
+            --card: #ffffff;
+            --muted: #64748b;
+            --accent: #155e75;
+            /* biru-teal */
+            --accent-2: #2b6cb0;
+            /* biru */
+            --green: #059669;
+            /* go fresh */
+            --radius: 12px;
+            --shadow: 0 6px 24px rgba(16, 24, 40, 0.06);
+            font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: #0f172a;
+            line-height: 1.5
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 28px
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 0
+        }
+
+        .brand {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+
+        .logo {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700
+        }
+
+        nav a {
+            margin-left: 18px;
+            color: var(--muted);
+            text-decoration: none;
+            font-weight: 600
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            align-items: center;
+            padding: 36px 0
+        }
+
+        .hero-inner {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));
+            padding: 28px;
+            border-radius: 16px;
+            box-shadow: var(--shadow)
+        }
+
+        h1 {
+            font-size: 28px;
+            margin: 0 0 10px
+        }
+
+        p.lead {
+            margin: 0 0 18px;
+            color: var(--muted)
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white
+        }
+
+        .btn-ghost {
+            background: transparent;
+            border: 1px solid rgba(16, 24, 40, 0.06);
+            color: var(--accent-2)
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px
+        }
+
+        /* sections */
+        section {
+            padding: 40px 0
+        }
+
+        .card {
+            background: var(--card);
+            padding: 18px;
+            border-radius: 12px;
+            box-shadow: var(--shadow)
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            background: rgba(43, 108, 176, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-2);
+            font-weight: 700
+        }
+
+        ul.plain {
+            list-style: none;
+            padding: 0;
+            margin: 0
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px
+        }
+
+        .testimonial {
+            background: linear-gradient(180deg, #fff, #f8fafc);
+            padding: 16px;
+            border-radius: 12px
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px
+        }
+
+        .portfolio-item {
+            height: 160px;
+            background: #e6eef6;
+            border-radius: 10px;
+            display: flex;
+            align-items: flex-end;
+            padding: 12px;
+            color: var(--accent-2);
+            font-weight: 700
+        }
+
+        .pricing {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px
+        }
+
+        .price {
+            padding: 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(16, 24, 40, 0.04);
+            background: var(--card)
+        }
+
+        footer {
+            padding: 28px 0;
+            color: var(--muted)
+        }
+
+        @media(min-width:800px) {
+            .hero {
+                grid-template-columns: 1fr 420px
+            }
+
+            h1 {
+                font-size: 36px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <div class="logo">JD</div>
+                <div>
+                    <div style="font-weight:800">Jasa Profesional</div>
+                    <div style="font-size:12px;color:var(--muted)">Solusi untuk UMKM, freelancer & bisnis</div>
+                </div>
+            </div>
+            <nav>
+                <a href="#layanan">Layanan</a>
+                <a href="#portfolio">Portofolio</a>
+                <a href="#harga">Harga</a>
+                <a class="btn btn-primary"
+                    href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20%20menanyakan%20jasa"
+                    target="_blank">WhatsApp</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-inner">
+                    <h1>Jasa Profesional yang Membuat Bisnis Anda Lebih Meyakinkan</h1>
+                    <p class="lead">Layanan cepat & jelas untuk UMKM, konsultan, freelancer, bengkel, klinik, jasa
+                        desain dan developer. Paket fleksibel sesuai kebutuhan.</p>
+                    <div style="display:flex;gap:12px;flex-wrap:wrap">
+                        <a class="btn btn-primary"
+                            href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20mendapatkan%20informasi%20layanan"
+                            target="_blank">Hubungi via WhatsApp</a>
+                        <a class="btn btn-ghost" href="#layanan">Lihat Layanan</a>
+                    </div>
+
+                    <div style="margin-top:20px" class="grid-3">
+                        <div class="card">
+                            <strong>Berpengalaman</strong>
+                            <div style="color:var(--muted);font-size:14px;margin-top:8px">Tim professional dengan
+                                portofolio nyata.</div>
+                        </div>
+                        <div class="card">
+                            <strong>Proses Cepat</strong>
+                            <div style="color:var(--muted);font-size:14px;margin-top:8px">Mulai dari konsultasi hingga
+                                hasil akhir yang rapi.</div>
+                        </div>
+                        <div class="card">
+                            <strong>Harga Jelas</strong>
+                            <div style="color:var(--muted);font-size:14px;margin-top:8px">Paket transparan, tanpa biaya
+                                tersembunyi.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <aside>
+                    <div class="card">
+                        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+                            <div
+                                style="width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--green),var(--accent));display:flex;align-items:center;justify-content:center;color:white;font-weight:800">
+                                CP</div>
+                            <div>
+                                <div style="font-weight:800">Konsultasi Gratis</div>
+                                <div style="font-size:13px;color:var(--muted)">Diskusi kebutuhan & estimasi waktu</div>
+                            </div>
+                        </div>
+                        <a class="btn btn-primary" href="https://wa.me/6281234567890?text=Saya%20mau%20konsultasi"
+                            target="_blank">Mulai Konsultasi</a>
+                    </div>
+                </aside>
+            </section>
+
+            <section id="layanan">
+                <h2>Layanan Utama</h2>
+                <p style="color:var(--muted);margin-top:6px">Solusi yang sering dicari bisnis modern.</p>
+                <div style="margin-top:16px" class="grid-3">
+                    <div class="card">
+                        <div style="display:flex;gap:12px;align-items:center">
+                            <div class="service-icon">WD</div>
+                            <div>
+                                <strong>Website & Landing Page</strong>
+                                <div style="color:var(--muted);font-size:13px;margin-top:6px">Desain responsif untuk
+                                    konversi.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div style="display:flex;gap:12px;align-items:center">
+                            <div class="service-icon">BD</div>
+                            <div>
+                                <strong>Branding & Desain</strong>
+                                <div style="color:var(--muted);font-size:13px;margin-top:6px">Logo, identitas visual,
+                                    materi pemasaran.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div style="display:flex;gap:12px;align-items:center">
+                            <div class="service-icon">DE</div>
+                            <div>
+                                <strong>Development & Integrasi</strong>
+                                <div style="color:var(--muted);font-size:13px;margin-top:6px">Aplikasi web, integrasi
+                                    pembayaran & API.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div style="display:flex;gap:12px;align-items:center">
+                            <div class="service-icon">MK</div>
+                            <div>
+                                <strong>Marketing Digital</strong>
+                                <div style="color:var(--muted);font-size:13px;margin-top:6px">Strategi, iklan, SEO &
+                                    social media.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div style="display:flex;gap:12px;align-items:center">
+                            <div class="service-icon">CL</div>
+                            <div>
+                                <strong>Maintenance & Support</strong>
+                                <div style="color:var(--muted);font-size:13px;margin-top:6px">Backup, update &
+                                    troubleshooting.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div style="display:flex;gap:12px;align-items:center">
+                            <div class="service-icon">KT</div>
+                            <div>
+                                <strong>Training & Workshop</strong>
+                                <div style="color:var(--muted);font-size:13px;margin-top:6px">Pelatihan penggunaan &
+                                    pemasaran.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Benefit Menggunakan Jasa Kami</h2>
+                <p style="color:var(--muted);margin-top:6px">Fokus pada hasil yang memberi nilai nyata.</p>
+                <div style="margin-top:16px" class="benefits">
+                    <div class="card">
+                        <strong>Hemat Waktu</strong>
+                        <div style="color:var(--muted);margin-top:8px">Proses terstruktur sehingga proyek selesai cepat.
+                        </div>
+                    </div>
+                    <div class="card">
+                        <strong>Kualitas Terukur</strong>
+                        <div style="color:var(--muted);margin-top:8px">Standar QA untuk memastikan hasil profesional.
+                        </div>
+                    </div>
+                    <div class="card">
+                        <strong>Skalabilitas</strong>
+                        <div style="color:var(--muted);margin-top:8px">Solusi yang bisa berkembang seiring bisnis Anda.
+                        </div>
+                    </div>
+                    <div class="card">
+                        <strong>Dukungan Purna Jual</strong>
+                        <div style="color:var(--muted);margin-top:8px">Support dan pembaruan sesuai kebutuhan.</div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Testimoni</h2>
+                <p style="color:var(--muted);margin-top:6px">Beberapa kata dari klien yang puas.</p>
+                <div style="margin-top:16px" class="grid-3">
+                    <div class="testimonial">
+                        <strong>Aris - Pemilik UMKM</strong>
+                        <div style="color:var(--muted);margin-top:8px">"Website baru kami meningkatkan penjualan online
+                            40% dalam 2 bulan. Timnya responsif dan profesional."</div>
+                    </div>
+                    <div class="testimonial">
+                        <strong>Sinta - Freelancer</strong>
+                        <div style="color:var(--muted);margin-top:8px">"Desain branding yang dibuat sangat sesuai dengan
+                            karakter klien saya. Proses cepat dan mudah."</div>
+                    </div>
+                    <div class="testimonial">
+                        <strong>Rudi - Klinik</strong>
+                        <div style="color:var(--muted);margin-top:8px">"Integrasi booking dan pembayaran sangat membantu
+                            operasional klinik kami."</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="portfolio">
+                <h2>Portofolio</h2>
+                <p style="color:var(--muted);margin-top:6px">Contoh proyek dari berbagai industri.</p>
+                <div style="margin-top:16px" class="portfolio-grid">
+                    <div class="portfolio-item">Landing Page UMKM</div>
+                    <div class="portfolio-item">Branding Klinik</div>
+                    <div class="portfolio-item">E-commerce Bengkel</div>
+                    <div class="portfolio-item">Aplikasi Internal</div>
+                </div>
+            </section>
+
+            <section id="harga">
+                <h2>Pricing</h2>
+                <p style="color:var(--muted);margin-top:6px">Paket sederhana untuk kebutuhan berbeda — hubungi untuk
+                    kustomisasi.</p>
+                <div style="margin-top:16px" class="pricing">
+                    <div class="price">
+                        <div style="font-weight:800">Basic</div>
+                        <div style="color:var(--muted);margin-top:8px">Cocok untuk UMKM yang baru mulai</div>
+                        <div style="font-size:28px;font-weight:800;margin:12px 0">Rp 2.500.000</div>
+                        <ul class="plain" style="color:var(--muted);margin-top:8px">
+                            <li>Landing page 1 halaman</li>
+                            <li>Desain responsif</li>
+                            <li>1 revisi</li>
+                        </ul>
+                        <div style="margin-top:12px"><a class="btn btn-primary"
+                                href="https://wa.me/6281234567890?text=Saya%20mau%20paket%20Basic" target="_blank">Pilih
+                                Basic</a></div>
+                    </div>
+
+                    <div class="price">
+                        <div style="font-weight:800">Pro</div>
+                        <div style="color:var(--muted);margin-top:8px">Untuk bisnis yang butuh lebih</div>
+                        <div style="font-size:28px;font-weight:800;margin:12px 0">Rp 7.500.000</div>
+                        <ul class="plain" style="color:var(--muted);margin-top:8px">
+                            <li>Website multi-halaman</li>
+                            <li>SEO dasar & form</li>
+                            <li>3 revisi + support 1 bulan</li>
+                        </ul>
+                        <div style="margin-top:12px"><a class="btn btn-primary"
+                                href="https://wa.me/6281234567890?text=Saya%20mau%20paket%20Pro" target="_blank">Pilih
+                                Pro</a></div>
+                    </div>
+
+                    <div class="price">
+                        <div style="font-weight:800">Enterprise</div>
+                        <div style="color:var(--muted);margin-top:8px">Solusi kustom & integrasi</div>
+                        <div style="font-size:28px;font-weight:800;margin:12px 0">Mulai dari Rp 15.000.000</div>
+                        <ul class="plain" style="color:var(--muted);margin-top:8px">
+                            <li>Solusi kustom</li>
+                            <li>Integrasi & API</li>
+                            <li>Support & SLA</li>
+                        </ul>
+                        <div style="margin-top:12px"><a class="btn btn-primary"
+                                href="https://wa.me/6281234567890?text=Saya%20mau%20paket%20Enterprise"
+                                target="_blank">Hubungi Sales</a></div>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                style="padding:28px 0;background:linear-gradient(180deg,rgba(5,150,105,0.06),transparent);border-radius:12px">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+                    <div>
+                        <h3 style="margin:0">Siap meningkatkan bisnis Anda?</h3>
+                        <div style="color:var(--muted);margin-top:6px">Konsultasi cepat & penawaran tanpa komitmen.
+                        </div>
+                    </div>
+                    <div style="display:flex;gap:12px">
+                        <a class="btn btn-primary" href="https://wa.me/6281234567890?text=Saya%20siap%20mulai"
+                            target="_blank">Hubungi via WhatsApp</a>
+                        <a class="btn btn-ghost" href="#portfolio">Lihat Portofolio</a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer style="margin-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+            <div>
+                <div style="font-weight:800">Jasa Profesional</div>
+                <div style="color:var(--muted);font-size:13px;margin-top:6px">Jl. Contoh No.1 — Email: info@contoh.id
+                </div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:center">
+                <a style="color:var(--muted);text-decoration:none" href="https://wa.me/6281234567890"
+                    target="_blank">WhatsApp</a>
+                <span style="color:var(--muted)">•</span>
+                <a style="color:var(--muted);text-decoration:none" href="#">Kebijakan Privasi</a>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

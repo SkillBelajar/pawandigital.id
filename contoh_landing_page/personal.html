@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawan Digital | Guru Digital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* RESET DAN BASE STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* UTILITY & TYPOGRAPHY */
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #1a1a1a;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #c084fc;
+            /* Warna ungu minimalis */
+            margin: 15px auto 0;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            background-color: #c084fc;
+            color: #ffffff;
+            border: 2px solid #c084fc;
+        }
+
+        .btn-primary:hover {
+            background-color: #a855f7;
+            border-color: #a855f7;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #c084fc;
+            border: 2px solid #c084fc;
+            margin-left: 15px;
+        }
+
+        .btn-secondary:hover {
+            background-color: #c084fc;
+            color: #ffffff;
+        }
+
+
+        /* 1. HEADER/NAVIGASI */
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #c084fc;
+        }
+
+        /* 2. HERO SECTION */
+        .hero {
+            background-color: #fcfcfc;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .hero-text {
+            max-width: 500px;
+            text-align: left;
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .hero-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 8px solid #c084fc;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 3. TENTANG SAYA */
+        .about-me {
+            background-color: #f8f8f8;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        /* 4. SKILL UTAMA */
+        .skills {
+            text-align: center;
+        }
+
+        .skill-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .skill-item {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            padding: 20px 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            min-width: 200px;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            border-color: #c084fc;
+        }
+
+        .skill-item i {
+            font-size: 1.8rem;
+            color: #c084fc;
+            margin-bottom: 10px;
+        }
+
+        .skill-item h4 {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        /* 5. PORTOFOLIO PEKERJAAN */
+        .portfolio {
+            background-color: #f8f8f8;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+
+        .portfolio-item:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .portfolio-info {
+            padding: 20px;
+        }
+
+        .portfolio-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .portfolio-info p {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* 6. TESTIMONI */
+        .testimonials {
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .testimonial-slider {
+            max-width: 700px;
+            margin: 0 auto;
+            /* Karena ini adalah kerangka HTML murni, kita hanya menampilkan satu item */
+        }
+
+        .testimonial-card {
+            background-color: #fcfcfc;
+            border-left: 5px solid #c084fc;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        .client-info {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .client-info span {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #777;
+        }
+
+        /* 7. KONTAK/WHATSAPP */
+        .contact {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .contact h2::after {
+            background-color: #ffffff;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: #c084fc;
+            margin-right: 10px;
+        }
+
+        .contact-item a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #c084fc;
+        }
+
+        .contact-cta {
+            margin-top: 30px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #111;
+            color: #888;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                text-align: center;
+                max-width: 100%;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-image {
+                margin-bottom: 30px;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                display: block;
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            nav a {
+                margin-left: 15px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">Pawan Digital</div>
+            <nav>
+                <a href="#about">Tentang</a>
+                <a href="#skills">Skills</a>
+                <a href="#portfolio">Portofolio</a>
+                <a href="#contact" class="btn-primary">Hubungi</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="https://via.placeholder.com/250/C084FC/FFFFFF?text=FOTO+ANDA"
+                        alt="Foto Profil Profesional">
+                </div>
+                <div class="hero-text">
+                    <p style="color: #c084fc; font-weight: 600;">👋 Halo, Saya Pawan Digital</p>
+                    <h1>Guru Digital & Konsultan Konten yang Inovatif</h1>
+                    <p>Membantu individu dan bisnis mengubah ide menjadi konten yang terstruktur, menarik, dan efektif,
+                        baik melalui pengajaran daring maupun konsultasi langsung.</p>
+                    <a href="#portfolio" class="btn-primary">Lihat Karya Saya</a>
+                    <a href="https://wa.me/628123456789" target="_blank" class="btn-secondary"><i
+                            class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-me section-padding">
+        <div class="container">
+            <h2>Tentang Saya</h2>
+            <div class="about-content">
+                <p>Saya telah berkecimpung di dunia edukasi dan konten selama lebih dari 8 tahun, dengan fokus kuat
+                    pada integrasi teknologi untuk efisiensi maksimal. Saya percaya bahwa keahlian terbaik adalah
+                    keahlian yang dapat dikomunikasikan dengan jelas dan diterapkan secara praktis.</p>
+                <p>Latar belakang saya dalam Desain Kurikulum dan Strategi Pemasaran Konten memungkinkan saya
+                    untuk melihat proyek dari dua sisi: struktur logis dan daya tarik pasar. Saya bersemangat untuk
+                    membawa pendekatan yang bersih, terorganisir, dan berorientasi hasil ke setiap proyek yang saya
+                    tangani.</p>
+                <a href="#" class="btn-primary">Download CV Lengkap</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills section-padding">
+        <div class="container">
+            <h2>Keahlian Utama</h2>
+            <div class="skill-grid">
+                <div class="skill-item">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h4>Pengembangan E-Course</h4>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-pencil-alt"></i>
+                    <h4>Strategi Konten SEO</h4>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-camera"></i>
+                    <h4>Fotografi & Videografi Dasar</h4>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-users-cog"></i>
+                    <h4>Konsultasi Personal Branding</h4>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-sitemap"></i>
+                    <h4>Perencanaan Struktur Digital</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio section-padding">
+        <div class="container">
+            <h2>Karya Pilihan Saya</h2>
+            <div class="portfolio-grid">
+                <a href="#" class="portfolio-item">
+                    <img src="https://via.placeholder.com/400x200/555/FFFFFF?text=PROYEK+1" alt="Judul Proyek 1">
+                    <div class="portfolio-info">
+                        <h3>Desain Kurikulum LMS A</h3>
+                        <p>Mengembangkan 5 modul pembelajaran interaktif untuk platform LMS korporat.</p>
+                    </div>
+                </a>
+                <a href="#" class="portfolio-item">
+                    <img src="https://via.placeholder.com/400x200/777/FFFFFF?text=PROYEK+2" alt="Judul Proyek 2">
+                    <div class="portfolio-info">
+                        <h3>Branding Visual Content Creator</h3>
+                        <p>Perancangan identitas visual dan strategi posting untuk 3 bulan awal.</p>
+                    </div>
+                </a>
+                <a href="#" class="portfolio-item">
+                    <img src="https://via.placeholder.com/400x200/999/FFFFFF?text=PROYEK+3" alt="Judul Proyek 3">
+                    <div class="portfolio-info">
+                        <h3>Workshop Fotografi Esensial</h3>
+                        <p>Materi pelatihan dan *handout* untuk workshop daring dengan 100+ peserta.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials section-padding">
+        <div class="container">
+            <h2>Kata Mereka Tentang Saya</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <p>"Pendekatan Pawan Digital sangat terstruktur dan langsung ke inti masalah. Kurikulum yang
+                        beliau buat meningkatkan retensi peserta hingga 40%. Sangat direkomendasikan!"</p>
+                    <div class="client-info">
+                        [Nama Klien]
+                        <span>Manajer Pengembangan SDM, Perusahaan X</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <h2>Mari Terhubung</h2>
+            <p>Saya selalu terbuka untuk kolaborasi baru, peluang mengajar, atau sekadar bertukar pikiran. Jangan ragu
+                untuk menghubungi saya!</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i> <a href="mailto:halo@emailanda.com">halo@emailanda.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia
+                </div>
+            </div>
+            <div class="contact-cta">
+                <a href="https://wa.me/628123456789" target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i>
+                    Mulai Obrolan (Respons Cepat)</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Pawan Digital. Didesain untuk Personal Branding profesional.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
