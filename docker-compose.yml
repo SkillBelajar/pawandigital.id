@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  web:
+    image: nginx:alpine
+    container_name: pawandigitax
+    ports:
+      - "8089:80"
+    volumes:
+      - .:/usr/share/nginx/html:ro
+    restart: always
+    networks:
+      - kerangka_app32
+
+networks:
+  kerangka_app32:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 122.21.0.0/16
